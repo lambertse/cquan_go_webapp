@@ -29,7 +29,7 @@ func GetAppConfigFromEnv() (*AppConfig, error) {
   config.Port = os.Getenv("PORT")
 
   if err != nil {
-      log.Fatalf("Failed to connect to database: %v", err)
+      log .Fatalf("Failed to connect to database: %v", err)
   }  
   return &config, nil
 }

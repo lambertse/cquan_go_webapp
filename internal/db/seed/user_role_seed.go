@@ -3,7 +3,7 @@ package seeds
 import (
 	"log"
 
-	"github.com/lambertse/cquan_go_webapp/models"
+	"github.com/lambertse/cquan_go_webapp/internal/models"
 	"gorm.io/gorm"
 )
 

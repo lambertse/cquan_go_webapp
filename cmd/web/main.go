@@ -2,10 +2,10 @@ package main
 
 import (
 	"log"
+	"net/http"
 
-	"github.com/lambertse/cquan_go_webapp/db"
-	"github.com/lambertse/cquan_go_webapp/pkg/config"
-	"github.com/lambertse/cquan_go_webapp/services"
+	"github.com/lambertse/cquan_go_webapp/internal/db"
+	"github.com/lambertse/cquan_go_webapp/internal/config"
 )
 
 var appConfig *config.AppConfig 
@@ -28,14 +28,14 @@ func main() {
   // }
   //
 
-  userService := services.NewUserService()
-  user, err := userService.GetAllUsers()
-  if err != nil {
-    log.Fatalf("Failed to get users: %v", err)
-  }
-  // Print users detail
-  for _, u := range user {
-    log.Printf("User: ID=%d, Username=%s", u.ID, u.Username)
+  server := http.Server{
+    Addr: ":" + appConfig.Port,
+    Handler: route(),
   }
   log.Printf("Start serving on port %s", appConfig.Port)
+
+  err = server.ListenAndServe();
+  if err != nil {
+    log.Printf("Serving failed, err: %s", err)
+  }
 }

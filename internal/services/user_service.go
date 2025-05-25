@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/lambertse/cquan_go_webapp/db"
-	"github.com/lambertse/cquan_go_webapp/models"
+	"github.com/lambertse/cquan_go_webapp/internal/db"
+	"github.com/lambertse/cquan_go_webapp/internal/models"
 	"gorm.io/gorm"
 )
 

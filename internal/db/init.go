@@ -1,8 +1,8 @@
 package db
 
 import (
-	"github.com/lambertse/cquan_go_webapp/db/seed"
-	"github.com/lambertse/cquan_go_webapp/models"
+	"github.com/lambertse/cquan_go_webapp/internal/db/seed"
+	"github.com/lambertse/cquan_go_webapp/internal/models"
 )
 
 // MigrateAndSeed performs database migration and seeds initial data
